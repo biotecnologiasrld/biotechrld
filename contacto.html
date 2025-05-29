@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog informativo de Biotecnologías RLD">
+    <title>Contacto</title>
+    <link rel="icon" href="img/Logo_Final.jpg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header2">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="inicio.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">Biotecnologías<span class="logo__bold">RLD</span></h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="visitas.html" class="navegacion__enlace">Visitas</a>
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="contenedor">
+        <h3 class="centrar-texto">Contáctanos</h3>
+        <div class="contacto-bg"></div>
+            <form class="formulario" action="send_email.php">
+                <fieldset>
+                <legend>
+                    Ingresa tus datos. Nos pondremos en contacto.
+                </legend>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label for="nombre" >Nombre</label>
+                        <input class="input" type="text" placeholder="Nombre" id="nombre">
+                    </div>
+                    <div class="campo">
+                        <label for="tel">Teléfono</label>
+                        <input class="input" type="tel" placeholder="Teléfono" id="tel">
+                    </div>
+                    <div class="campo">
+                        <label for="mail">Correo</label>
+                        <input class="input" type="email" placeholder="e-mail" id="mail">
+                    </div>
+                    <div class="campo-mensaje">
+                        <label for="mensaje">Déjanos un mensaje</label>
+                        <textarea class="input" id="mensaje"></textarea>
+                        <div class="enviar"> 
+                            <input class="boton" type="submit" value="Enviar">
+                        </div>
+                    </div>
+                    </div> <!--Contenedor de los campos-->
+                    
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+<footer class="footer">
+    <div class="barra">
+        <a class="logo" href="inicio.html">
+            <img src="img/Logo_Final.jpg" alt="logo" style="width: 10rem; height: 10rem; margin: 1.5rem;">
+        </a>
+        <p style="color: white; font-size: 1rem; margin: 1rem;">© BIOTECNOLOGÍAS RLD | TODOS LOS DERECHOS RESERVADOS |</p>
+        <nav class="navegacion">
+            <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+            <a href="visitas.html" class="navegacion__enlace">Visitas</a>
+            <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+        </nav>
+    </div>
+</div>
+</footer>
+</html>
