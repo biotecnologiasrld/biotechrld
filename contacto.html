@@ -32,7 +32,7 @@
     <main class="contenedor">
         <h3 class="centrar-texto">Contáctanos</h3>
         <div class="contacto-bg"></div>
-            <form class="formulario" method="post" action="send_email.php" id="contacto" name="contacto">
+            <form class="formulario" method="post" action="https://formspree.io/f/mldndlrb" id="contacto" name="contacto">
                 <fieldset>
                 <legend>
                     Ingresa tus datos. Nos pondremos en contacto.
@@ -61,76 +61,6 @@
                     
                 </fieldset>
             </form>
-            <!-- Mensaje de confirmación -->
-    <div id="mensaje_confirmacion" style="display:none; margin-top: 20px; font-size: 20px;">
-        <p>¡Tu mensaje ha sido enviado correctamente!</p>
-    </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    $(document).ready(function () {
-        $('#contacto').on('submit', function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: 'send_email.php',
-                data: $(this).serialize(),
-                dataType: 'json',
-                success: function (response) {
-                     // Si el backend responde con éxito
-                if (response.status === 'success') {
-                    $('#resultados_ajax').html(response.message); // Muestra mensaje de éxito
-                    swal.fire({
-                        icon: "success",
-                        iconColor: "green",
-                        title: response.message,
-                        timer: 1600,
-                        timerProgressBar: true,
-                        position: "center",
-                        showConfirmButton: false,
-                        customClass: {
-                            timerProgressBar: 'progreso'
-                        }
-                    });
-                    // Reiniciar formulario
-                    let nombre = document.querySelector(".form-control");
-                    let correo = document.querySelector("#correo");
-                    let msj = document.querySelector(".mensaje");
-                    nombre.value = "";
-                    correo.value = "";
-                    msj.value = "";
-                } else if (response.status === 'error') {
-                    // Si el backend responde con un error 
-                    $('#resultados_ajax').html('<p>' + response.message + '</p>'); // Mostrar el mensaje de error
-                    swal.fire({
-                        icon: "error",
-                        iconColor: "red",
-                        title: "Error",
-                        text: response.message,
-                        timer: 2000,
-                        timerProgressBar: true,
-                        position: "center",
-                        showConfirmButton: false,
-                        customClass: {
-                            timerProgressBar: 'progreso'
-                        }
-                    });
-                    // Reiniciar formulario
-                    let nombre = document.querySelector(".form-control");
-                    let correo = document.querySelector("#correo");
-                    let msj = document.querySelector(".mensaje");
-                    nombre.value = "";
-                    correo.value = "";
-                    msj.value = "";
-                }
-            },
-            error: function () {
-                $('#resultados_ajax').html('<p>Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.</p>');
-            }
-        });
-    });
-});
-</script>
         </div>
     </main>
 </body>
