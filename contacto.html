@@ -63,6 +63,54 @@
             </form>
         </div>
     </main>
+    
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contacto");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch("https://formspree.io/f/mldndlrb", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    iconColor: "green",
+                    title: "Mensaje enviado",
+                    text: "¡Gracias por contactarnos!",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+                form.reset(); // Reinicia el formulario
+            } else {
+                return response.json().then(data => {
+                    throw new Error(data.error || "Error al enviar el formulario.");
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: "error",
+                iconColor: "red",
+                title: "Oops...",
+                text: error.message,
+                confirmButtonText: "Ok"
+            });
+        });
+    });
+});
+</script>
 </body>
 <footer class="footer">
     <div class="barra">
