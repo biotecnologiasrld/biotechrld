@@ -94,8 +94,8 @@ img {
     background-position: center center; /*Centra vertical y horizontalmente*/
  }
  .header4 {
-    background-image: url(../img/invernaderos2.png);
-    background-position-y: -18rem !important;
+    background-image: url(../img/bsf_drop.jpg);
+    background-position-y: -10rem !important;
     height: 50rem;
     background-size: cover; /*Se usa para que cubra todo el espacio*/
     background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
