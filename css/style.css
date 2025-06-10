@@ -407,3 +407,8 @@ img {
         cursor: pointer;
     }
 }
+.entrada__imagen {
+    width: 60%;
+    display: block;
+    margin: auto;
+}
