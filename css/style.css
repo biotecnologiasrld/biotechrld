@@ -142,6 +142,14 @@ img {
         margin-bottom: -12rem;
         background-position-y: -12rem !important;
     }
+    .header4 {
+        background-image: url(../img/bsf_drop.jpg);
+        background-position-y: -1rem !important;
+        height: 50rem;
+        background-size: cover; /*Se usa para que cubra todo el espacio*/
+        background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
+        background-position: center center; /*Centra vertical y horizontalmente*/
+    }
     .logo__nombre {
         font-size: 4rem;
     }
@@ -153,6 +161,14 @@ img {
     }
     .navegacion__enlace {
         background-color: rgba(0, 0, 0, 0.856);
+        border-radius: 1rem;
+        padding: 1rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+
+    }
+    .navegacion__enlace2 {
+        background-color: rgba(255, 255, 255, 0.856);
         border-radius: 1rem;
         padding: 1rem;
         padding-top: 0rem;
@@ -207,7 +223,7 @@ img {
     font-size: 2rem;
     color: var(--blanco);
 }
-.navegacion__enlace--activo, .navegacion__enlace:hover {
+.navegacion__enlace--activo, .navegacion__enlace:hover, .navegacion__enlace2:hover {
     font-weight: bold;
     color: rgb(62, 204, 6);
     animation: parpadeo 0.5s infinite alternate;
