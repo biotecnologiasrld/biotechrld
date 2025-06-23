@@ -113,11 +113,79 @@ img {
     background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
     background-position: center center; /*Centra vertical y horizontalmente*/ 
  }
+ .header6 {
+        background-image: url(../img/msn_home.webp);
+        background-position-y: -8rem !important;
+        height: 50rem;
+        background-size: cover; /*Se usa para que cubra todo el espacio*/
+        background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
+        background-position: center center; /*Centra vertical y horizontalmente*/
+    }
  .header__texto {
     color: whitesmoke;
     text-align: center;
     margin-top: 5rem;
  }
+ /* PRODUCTOS */
+ .productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 8rem;
+  }
+
+  .producto {
+    border: 1px solid #000000;
+    border-radius: 3rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .carrusel {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  .carrusel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: deslizar 12s infinite;
+  }
+
+  .carrusel-item {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .carrusel-item img,
+  .carrusel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @keyframes deslizar {
+    0%   { transform: translateX(0%); }
+    33%  { transform: translateX(0%); }
+    38%  { transform: translateX(-100%); }
+    66%  { transform: translateX(-100%); }
+    71%  { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+  }
+
+  .producto h4 {
+    margin: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .producto p {
+    padding: 0 1rem 1rem;
+    text-align: justify;
+  }
+
  @media (min-width: 768px) {
     .header__texto {
         margin-top: 15rem;
@@ -170,6 +238,14 @@ img {
     background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
     background-position: center center; /*Centra vertical y horizontalmente*/ 
  }
+ .header6 {
+        background-image: url(../img/msn_home.webp);
+        background-position-y: -1rem !important;
+        height: 50rem;
+        background-size: cover; /*Se usa para que cubra todo el espacio*/
+        background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
+        background-position: center center; /*Centra vertical y horizontalmente*/
+    }
  .contenedor2 {
     max-width: 120rem;
     width: 90%;
@@ -305,7 +381,7 @@ img {
     background-color: var(--negro);
 }
 .boton--primario:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(164, 149, 39);
     transition: ease 0.5s;
 }
 .boton--secundario {
