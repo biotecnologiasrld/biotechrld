@@ -246,6 +246,16 @@ img {
         background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
         background-position: center center; /*Centra vertical y horizontalmente*/
     }
+    .productos {
+    display: inline-block;
+    padding: 3rem;
+  }
+    .productos h1 {
+        margin-top: -4rem;
+    }
+    .producto {
+        margin-top: 3rem;
+    }
  .contenedor2 {
     max-width: 120rem;
     width: 90%;
