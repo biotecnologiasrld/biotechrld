@@ -691,6 +691,21 @@ img {
     background: #eaeaea;
     box-shadow: 0 0 0 2px #89c4f4;
 }
+.modal select {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.modal select:focus {
+    border-color: #4CAF50;
+}
 
 .modal-botones {
     display: flex;
