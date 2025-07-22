@@ -547,3 +547,199 @@ img {
     display: block;
     margin: auto;
 }
+/* Cambia el color de la barra del timer */
+.my-timer .swal2-timer-progress-bar {
+  background: #00cc99 !important;  /* Cambia este color */
+}
+.carrito-icono {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+/* #carrito {
+    position: fixed;
+    border-radius: 3rem;
+    right: 1rem;
+    top: 4rem;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.514);
+    z-index: 999;
+} */
+ #carrito {
+    position: fixed;
+    right: 20px;
+    top: 70px;
+    width: 300px;
+    max-height: 80vh; /* evita que crezca más del 80% de la altura visible */
+    overflow-y: auto;  /* permite hacer scroll vertical si hay muchos productos */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.667);
+    z-index: 1000;
+    border-radius: 13px;
+}
+
+/* mejora el scroll visual */
+#carrito::-webkit-scrollbar {
+    width: 8px;
+}
+#carrito::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#btn-pagar {
+  display: none; /* Oculto por defecto */
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.oculto {
+    display: none;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.carrito-item img {
+    width: 100%;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+
+.boton--pagar, .boton--paypal {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 1rem;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.804);
+}
+
+.boton--paypal {
+    background-color: #0070ba;
+}
+
+.modal {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    z-index: 1100;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal input {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+ .producto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.input-cantidad {
+    width: 80px;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.precio-producto {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.boton--agregar {
+    background-color: #007bff;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.boton--agregar:hover {
+    background-color: #0056b3;
+}
+.carrito-controles {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.carrito-controles button {
+    background-color: #ddd;
+    border: none;
+    padding: 3px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.carrito-controles button:hover {
+    background-color: #ccc;
+}
