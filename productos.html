@@ -48,14 +48,14 @@
         </div>
       </div>
     </div>
-    <h4 style="text-align: center;">Suplemento para Aves: Larva Mosca Soldado Negra 500 g</h4>
+    <h4 style="text-align: center;">Suplemento para Aves y Reptiles: Larva Mosca Soldado Negra 500 g</h4>
     <p style="text-align: center; font-weight: bold;">¡El alimento ideal para tus animales! </p>
     <p style="text-align: justify;">Descubre nuestra larva de mosca soldado negra deshidratada, una fuente de proteína premium diseñada para satisfacer las necesidades nutricionales de tus animales. Alimento 100% natural.</p>
     <div class="producto-info">
     <label for="cantidad1">Cantidad:</label>
     <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: $<span id="precio1">400</span></p>
-    <button onclick="agregarAlCarrito('Larva deshidratada 500g', 'img/500g.jpg', 400, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
+    <p class="precio-producto">Precio: $<span id="precio1">380</span></p>
+    <button onclick="agregarAlCarrito('Larva deshidratada 500g', 'img/500g.jpg', 380, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
   </div>
 
@@ -74,7 +74,7 @@
             </div>
       </div>
     </div>
-    <h4 style="text-align: center;">Suplemento para Aves: Larva Mosca Solado Negra 1 Kg</h4>
+    <h4 style="text-align: center;">Suplemento para Aves y Reptiles: Larva Mosca Soldado Negra 1 Kg</h4>
     <p style="text-align: center; font-weight: bold;">Beneficios comprobados: </p>
         <p style="text-align: justify; margin-bottom: -2rem;">- Mejora la digestión y absorción de nutrientes.</p>
         <p style="text-align: justify;margin-bottom: -2rem;">- Promueve un sistema inmunológico más fuerte.</p>
@@ -82,8 +82,8 @@
     <div class="producto-info">
     <label for="cantidad1">Cantidad:</label>
     <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: $<span id="precio1">600</span></p>
-    <button onclick="agregarAlCarrito('Larva deshidratada 1 Kg', 'img/1000g.jpg', 600, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
+    <p class="precio-producto">Precio: $<span id="precio1">560</span></p>
+    <button onclick="agregarAlCarrito('Larva deshidratada 1 Kg', 'img/1000g.jpg', 560, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
   </div>
 <!-- Producto 3 -->
@@ -101,7 +101,7 @@
             </div>
       </div>
     </div>
-    <h4 style="text-align: center;">Larva Viva de Mosca Soldado Negro 250 pz</h4>
+    <h4 style="text-align: center;">Alimento vivo: larva de Mosca Soldado Negra 250 pz</h4>
     <p style="text-align: center; font-weight: bold;">Larva Viva: proteína que se mueve.</p>
         <p style="text-align: justify; margin-bottom: -2rem;">Fuente rica en proteína y grasa ideal para la alimentación de aves y reptiles. Criadas con residuos orgánicos seleccionados, nuestras larvas son una opción sustentable, fresca y altamente nutritiva. Se entregan vivas, listas para consumo o engorda.</p>
         <br>
@@ -111,6 +111,42 @@
     <p class="precio-producto">Precio: $<span id="precio1">350</span></p>
     <button onclick="agregarAlCarrito('Larva viva 250 u', 'img/bsf1.jpeg', 350, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="producto">
+    <div class="carrusel">
+      <div class="carrusel-inner">
+            <div class="carrusel-item">
+                <img src="img/frassp4.jpg" alt="Producto 2 img1">
+            </div>
+            <div class="carrusel-item">
+                <img src="img/frassp1.jpg" alt="Producto 2 img1">
+            </div>
+            <div class="carrusel-item">
+                <img src="img/frassp3.jpg" alt="Producto 2 img1">
+            </div>
+      </div>
+    </div>
+    <h4 style="text-align: center;">Fertilizante Orgánico: Frass de Mosca Soldado</h4>
+    <h4 style="text-align: center; font-weight: bold;">NPK 3-2-2</h4>
+        <p style="text-align: justify; margin-bottom: -2rem;">¡Nutre tu suelo de forma natural! Nuestro frass de Mosca Soldado Negra es un fertilizante 100% orgánico, rico en nitrógeno, fósforo y potasio, ideal para huertos, jardines y cultivos. Mejora la salud del suelo, estimula el crecimiento de las plantas y del microbioma, además es amigable con el medio ambiente. ¡Elige una agricultura sustentable!</p>
+        <br>
+    <div class="producto-info" style="margin-top: -1rem;">
+  <label for="presentacionFrass">Presentación:</label>
+  <select class="input-cantidad" style="width: auto;" id="presentacionFrass" onchange="actualizarPrecioFrass()">
+    <option value="1">1 Kg - $180</option>
+    <option value="10">10 Kg - $950</option>
+  </select>
+
+  <label for="cantidadFrass">Cantidad:</label>
+  <input type="number" id="cantidadFrass" min="1" max="10" value="1" class="input-cantidad">
+
+  <p class="precio-producto">Precio: $<span id="precioFrass">180</span></p>
+
+  <button onclick="agregarFrassAlCarrito('img/frassp4.jpg')" class="boton boton--agregar">Agregar al carrito</button>
+</div>
+
   </div>
 </main>
 <div id="carrito" class="carrito oculto">
@@ -177,6 +213,20 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+  function actualizarPrecioFrass() {
+    const presentacion = document.getElementById("presentacionFrass").value;
+    const precioSpan = document.getElementById("precioFrass");
+    precioSpan.textContent = presentacion === "10" ? 950 : 180;
+  }
+
+  function agregarFrassAlCarrito(imagen) {
+    const presentacion = document.getElementById("presentacionFrass").value;
+    const cantidad = document.getElementById("cantidadFrass").value;
+    const precio = presentacion === "10" ? 950 : 180;
+    const nombre = presentacion === "10" ? "Frass 10 Kg" : "Frass 1 Kg";
+
+    agregarAlCarrito(nombre, imagen, precio, cantidad);
+  }
 function generarNumeroPedidoAleatorio() {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   let resultado = '';
