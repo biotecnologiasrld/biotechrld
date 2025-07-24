@@ -15,6 +15,24 @@
     <link rel="preload" href="img/invernaderos1.png" as="image">
 </head>
 <body>
+        <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+      title: '¡Promoción Especial!',
+      text: 'Aprovecha nuestro descuento en productos seleccionados. Sólo por tiempo limitado.',
+      imageUrl: 'img/proteo_promo.jpg', // Cambia esta ruta a la imagen que quieras mostrar
+      imageWidth: 1000,
+      width: '35%',
+      imageAlt: 'Promoción',
+      timer: 2500,
+      showConfirmButton: false,
+      timerProgressBar: true,
+      customClass: {
+        popup: 'promo-popup',
+      }
+    });
+  });
+</script>
   <div class="carrito-icono" id="btn-abrir-carrito" onclick="toggleCarrito()">
     🛒 <span id="contador-carrito">0</span>
 </div>
@@ -33,7 +51,6 @@
             </div>
         </div>
     </header>
-
     <main class="productos">
         <h1 style="text-align: center;">Conoce nuestros productos</h1>
         <img src="img/prompt.png" alt="prompt" style="border:solid rgb(163, 165, 34); border-radius: 2rem;">
@@ -54,8 +71,8 @@
     <div class="producto-info">
     <label for="cantidad1">Cantidad:</label>
     <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: $<span id="precio1">380</span></p>
-    <button onclick="agregarAlCarrito('Larva deshidratada 500g', 'img/500g.jpg', 380, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
+    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$400</span> $<span id="precio1">360</span></p>
+    <button onclick="agregarAlCarrito('Larva deshidratada 500g', 'img/500g.jpg', 360, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
   </div>
 
@@ -82,8 +99,8 @@
     <div class="producto-info">
     <label for="cantidad1">Cantidad:</label>
     <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: $<span id="precio1">560</span></p>
-    <button onclick="agregarAlCarrito('Larva deshidratada 1 Kg', 'img/1000g.jpg', 560, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
+    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$600</span> $<span id="precio1">540</span></p>
+    <button onclick="agregarAlCarrito('Larva deshidratada 1 Kg', 'img/1000g.jpg', 540, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
   </div>
 <!-- Producto 3 -->
@@ -106,11 +123,11 @@
         <p style="text-align: justify; margin-bottom: -2rem;">Fuente rica en proteína y grasa ideal para la alimentación de aves y reptiles. Criadas con residuos orgánicos seleccionados, nuestras larvas son una opción sustentable, fresca y altamente nutritiva. Se entregan vivas, listas para consumo o engorda.</p>
         <br>
     <div class="producto-info">
-    <label for="cantidad1">Cantidad:</label>
-    <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: $<span id="precio1">350</span></p>
-    <button onclick="agregarAlCarrito('Larva viva 250 u', 'img/bsf1.jpeg', 350, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
-    </div>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" min="1" max="10" value="1" class="input-cantidad">
+    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$350</span> $<span>315</span></p>
+    <button onclick="agregarEsteProductoAlCarrito(this)" class="boton boton--agregar">Agregar al carrito</button>
+  </div>
   </div>
 
   <!-- Producto 4 -->
@@ -224,6 +241,15 @@
     const cantidad = document.getElementById("cantidadFrass").value;
     const precio = presentacion === "10" ? 950 : 180;
     const nombre = presentacion === "10" ? "Frass 10 Kg" : "Frass 1 Kg";
+
+    agregarAlCarrito(nombre, imagen, precio, cantidad);
+  }
+  function agregarEsteProductoAlCarrito(boton) {
+    const producto = boton.closest('.producto-info');
+    const cantidad = producto.querySelector('.input-cantidad').value;
+    const precio = '315';
+    const nombre = "Larva viva 250 u";
+    const imagen = "img/bsf1.jpeg";
 
     agregarAlCarrito(nombre, imagen, precio, cantidad);
   }
@@ -559,7 +585,105 @@ document.querySelectorAll(".input-cantidad").forEach(input => {
 });
 
 </script>
+<!-- CHATBOT -->
+ <!-- Ícono del chatbot a la izquierda -->
+<div id="chatbot-icon" onclick="toggleChatbot()">
+  <img src="img/proteo_2.jpg" alt="Mascota" width="100">
+</div>
 
+<!-- Ventana del chatbot -->
+<div id="chatbot-window" style="display: none;">
+  <div class="chat-header">Hola, soy Proteo. ¿En qué puedo ayudarte?</div>
+  <div class="chat-body" id="chat-body">
+    <p><strong>Proteo:</strong> Pregúntame sobre nuestros productos, precios o envíos.</p>
+  </div>
+  <input type="text" id="chat-input" placeholder="Escribe aquí..." onkeydown="sendMessage(event)" style="width: 100%;">
+</div>
+<script>
+  document.addEventListener('click', function (event) {
+  const chatbot = document.getElementById('chatbot-window');
+  const icon = document.getElementById('chatbot-icon'); // tu ícono para abrir el chat
+
+  if (!chatbot.contains(event.target) && !icon.contains(event.target)) {
+    chatbot.style.display = 'none';
+  }
+});
+
+window.addEventListener('scroll', () => {
+  const icon = document.getElementById('chatbot-icon');
+  if (window.scrollY > 100) {
+    icon.style.opacity = '0.3'; // o icon.style.display = 'none';
+  } else {
+    icon.style.opacity = '1';
+  }
+});
+const chatbotIcon = document.getElementById('chatbot-icon');
+
+  chatbotIcon.addEventListener('mouseenter', () => {
+    chatbotIcon.style.opacity = '1';
+  });
+
+  chatbotIcon.addEventListener('mouseleave', () => {
+    chatbotIcon.style.opacity = '0.6';
+  });
+function toggleChatbot() {
+  const chatbot = document.getElementById('chatbot-window');
+  chatbot.style.display = (chatbot.style.display === 'block') ? 'none' : 'block';
+  if (chatbot.style.display === 'block') {
+    document.getElementById('chat-input').focus();
+  }
+}
+
+// Respuestas simples según palabras clave
+function sendMessage(event) {
+  if (event.key === 'Enter') {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (message === '') return;
+
+    const chatBody = document.getElementById('chat-body');
+
+    // Mostrar mensaje del usuario
+    const userMsg = document.createElement('p');
+    userMsg.innerHTML = `<strong>Tú:</strong> ${message}`;
+    chatBody.appendChild(userMsg);
+
+    // Preparar respuesta automática simple
+    let response = '';
+
+    const msgLower = message.toLowerCase();
+
+    if (msgLower.includes('precio') || msgLower.includes('cuesta')) {
+      response = 'Nuestros precios varían según el producto. ¿Quieres información sobre algún producto en específico?'; }
+    else if (msgLower.includes('hablar') || msgLower.includes('chatear') || msgLower.includes ('asesor')) {
+      response = 'Con gusto. Haz clic aquí para escribirnos por WhatsApp: <a href="https://wa.me/+525535075566?text=Hola%2C%20me%20gustaría%20hablar%20con%20un%20asesor%20de%20Biotecnologías%20RLD" target="_blank"> Whatsapp </a>. En un momento te atenderemos.'; }  
+    else if (msgLower.includes('proteína') || msgLower.includes('porcetaje') || msgLower.includes ('alimento') || msgLower.includes('proteina')) {
+      response = 'Nuestra larva deshidratada tiene hasta un 60% de proteína, además de prebióticos, minerales y activadores del sistema inmunológico. Es un alimento premium para aves (gallos, gallinas ponedoras, canarios, etc.), reptiles y cerdos.'; }  
+    else if (msgLower.includes('ubican') || msgLower.includes('ubicación') || msgLower.includes ('encuentran') || msgLower.includes('localizan') || msgLower.includes('quienes')) {
+      response = '<p style="text-align: justify;">Biotecnologías RLD se ubica en Ezequiel Montes, Querétaro. Somos una empresa mexicana que nació en 2023, con el fin de crear un impacto positivo en la zona. Revalorizando los residuos orgánicos de distintos restaurantes, viñedos, mercados y fraccionamientos. Colaboran con nosotros 17 mujeres, cuyo labor es de suma importancia para la generación de nuestra larva y fertilizante orgánico premium.</p>'; }  
+      else if (msgLower.includes('envío') || msgLower.includes('envios')) {
+      response = 'Ofrecemos envío a todo México con costo fijo de $150, y envío gratis en compras mayores a $500.';
+    } else if (msgLower.includes('producto') || msgLower.includes('productos')) {
+      response = 'Tenemos larva viva, larva deshidratada y fertilizante (frass) orgánico, todo en distintas presentaciones.';
+    } else if (msgLower.includes('hola') || msgLower.includes('buenos días') || msgLower.includes('buenas tardes')) {
+      response = '¡Hola! ¿En qué puedo ayudarte hoy?';
+    } else {
+      response = 'Disculpa, no entendí eso. Puedes preguntarme por precios, envíos o productos. Si tienes más dudas, contáctanos en Whatsapp y con gusto las resolveremos: <a href="https://wa.me/+525535075566?text=Hola%2C%20me%20gustaría%20hablar%20con%20un%20asesor%20de%20Biotecnologías%20RLD" target="_blank"> Whatsapp </a> ';
+    }
+
+    // Mostrar respuesta después de un pequeño delay para simular "pensar"
+    setTimeout(() => {
+      const botMsg = document.createElement('p');
+      botMsg.innerHTML = `<strong>Proteo:</strong> ${response}`;
+      chatBody.appendChild(botMsg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }, 800);
+
+    input.value = '';
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+}
+</script>
 </body>
 <footer class="footer">
     <div class="barra">
