@@ -121,6 +121,25 @@ img {
         background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
         background-position: center center; /*Centra vertical y horizontalmente*/
     }
+     .header7 {
+    background: linear-gradient(135deg, #000000, #717171); /* degradado moderno */
+    height: 10rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
  .header__texto {
     color: whitesmoke;
     text-align: center;
@@ -246,6 +265,28 @@ img {
         background-repeat: no-repeat; /*De esta forma no se repite la imagen en el fondo*/
         background-position: center center; /*Centra vertical y horizontalmente*/
     }
+.header7 {
+    background: linear-gradient(135deg, #000000, #717171); /* degradado moderno */
+    height: 10rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.contenedor video {
+    margin-top: -8rem;
+}
     .productos {
     display: inline-block;
     padding: 3rem;

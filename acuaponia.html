@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog informativo de Biotecnologías RLD">
+    <title>Cultivo Acuapónico</title>
+    <link rel="icon" href="img/Logo_Final.jpg">
+    <link rel="prefetch" href="nosotros.html" as="DOCTYPE">
+    <link rel="preconnect" href="css/normalize.css" as="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="css/style.css" as="styles">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="img/Logo_Final.jpg" as="image">
+    <link rel="preload" href="img/invernaderos1.png" as="image">
+</head>
+<body>
+    <header class="header7">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto" style="color: rgb(255, 255, 255);">Biotecnologías<span class="logo__bold">RLD</span></h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace" style="color: rgb(255, 255, 255);">Nosotros</a>
+                    <a href="visitas.html" class="navegacion__enlace" style="color: rgb(255, 255, 255);">Visitas</a>
+                    <a href="contacto.html" class="navegacion__enlace" style="color: rgb(255, 254, 254);">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="contenedor">
+        <p>Ezequiel Montes, Querétaro, 08 de agosto de 2025.</p>
+        <video src="img/Acuaponia_horizon - Trim.mp4" preload="auto" controls poster="img/aquaponia1.webp" style="width: 100%; height: 40rem;"></video>
+        <h3 class="centrar-texto">🌱¿Sabes qué es la acuaponia?🐟</h3>
+        <!-- <div class="sobre-nosotros">
+            <div class="img-nosotros">
+                <img src="img/bsf1.jpeg" alt="sobrenosotros">
+                <img src="img/aquaponia1.webp" alt="sobrenosotros">
+            </div> -->
+            <div style="text-align: justify;">
+                <p>Es un sistema de producción agroalimentaria que integra dos componentes en un circuito cerrado y recirculante: 
+                  <li><span style="font-weight: bold;">Acuicultura:</span> Cría de organismos acuáticos, usualmente peces, en un ambiente controlado.</li>
+                  <li><span style="font-weight: bold;">Hidroponía:</span> Cultivo de plantas sin tierra; se cultiva en balsas que flotan sobre el agua.</li></p>
+                  <p>
+                    El objetivo es aprovechar sinérgicamente los residuos metabólicos de los peces como fuente de nutrientes para las plantas, mientras que estas últimas filtran y purifican el agua, la cual se recircula al sistema acuático.
+                  </p>
+            </div>
+           
+    </main>
+    <!-- CHATBOT -->
+ <!-- Ícono del chatbot a la izquierda -->
+<div id="chatbot-icon" onclick="toggleChatbot()">
+  <img src="img/proteo_2.jpg" alt="Mascota" width="100">
+</div>
+
+<!-- Ventana del chatbot -->
+<div id="chatbot-window" style="display: none;">
+  <div class="chat-header">Hola, soy Proteo. ¿En qué puedo ayudarte?</div>
+  <div class="chat-body" id="chat-body">
+    <p><strong>Proteo:</strong> Pregúntame sobre nuestros productos, precios o envíos.</p>
+  </div>
+  <input type="text" id="chat-input" placeholder="Escribe aquí..." onkeydown="sendMessage(event)" style="width: 100%;">
+</div>
+<script>
+  document.addEventListener('click', function (event) {
+  const chatbot = document.getElementById('chatbot-window');
+  const icon = document.getElementById('chatbot-icon'); // tu ícono para abrir el chat
+
+  if (!chatbot.contains(event.target) && !icon.contains(event.target)) {
+    chatbot.style.display = 'none';
+  }
+});
+
+window.addEventListener('scroll', () => {
+  const icon = document.getElementById('chatbot-icon');
+  if (window.scrollY > 100) {
+    icon.style.opacity = '0.3'; // o icon.style.display = 'none';
+  } else {
+    icon.style.opacity = '1';
+  }
+});
+const chatbotIcon = document.getElementById('chatbot-icon');
+
+  chatbotIcon.addEventListener('mouseenter', () => {
+    chatbotIcon.style.opacity = '1';
+  });
+
+  chatbotIcon.addEventListener('mouseleave', () => {
+    chatbotIcon.style.opacity = '0.6';
+  });
+function toggleChatbot() {
+  const chatbot = document.getElementById('chatbot-window');
+  chatbot.style.display = (chatbot.style.display === 'block') ? 'none' : 'block';
+  if (chatbot.style.display === 'block') {
+    document.getElementById('chat-input').focus();
+  }
+}
+
+// Respuestas simples según palabras clave
+function sendMessage(event) {
+  if (event.key === 'Enter') {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (message === '') return;
+
+    const chatBody = document.getElementById('chat-body');
+
+    // Mostrar mensaje del usuario
+    const userMsg = document.createElement('p');
+    userMsg.innerHTML = `<strong>Tú:</strong> ${message}`;
+    chatBody.appendChild(userMsg);
+
+    // Preparar respuesta automática simple
+    let response = '';
+
+    const msgLower = message.toLowerCase();
+
+    if (msgLower.includes('precio') || msgLower.includes('cuesta')) {
+      response = 'Nuestros precios varían según el producto. ¿Quieres información sobre algún producto en específico?'; }
+    else if (msgLower.includes('hablar') || msgLower.includes('chatear') || msgLower.includes ('asesor')) {
+      response = 'Con gusto. Haz clic aquí para escribirnos por WhatsApp: <a href="https://wa.me/+525535075566?text=Hola%2C%20me%20gustaría%20hablar%20con%20un%20asesor%20de%20Biotecnologías%20RLD" target="_blank"> Whatsapp </a>. En un momento te atenderemos.'; }  
+    else if (msgLower.includes('proteína') || msgLower.includes('porcetaje') || msgLower.includes ('alimento') || msgLower.includes('proteina')) {
+      response = 'Nuestra larva deshidratada tiene hasta un 60% de proteína, además de prebióticos, minerales y activadores del sistema inmunológico. Es un alimento premium para aves (gallos, gallinas ponedoras, canarios, etc.), reptiles y cerdos.'; }  
+    else if (msgLower.includes('ubican') || msgLower.includes('ubicación') || msgLower.includes ('encuentran') || msgLower.includes('localizan') || msgLower.includes('quienes')) {
+      response = '<p style="text-align: justify;">Biotecnologías RLD se ubica en Ezequiel Montes, Querétaro. Somos una empresa mexicana que nació en 2023, con el fin de crear un impacto positivo en la zona. Revalorizando los residuos orgánicos de distintos restaurantes, viñedos, mercados y fraccionamientos. Colaboran con nosotros 17 mujeres, cuyo labor es de suma importancia para la generación de nuestra larva y fertilizante orgánico premium.</p>'; }  
+      else if (msgLower.includes('envío') || msgLower.includes('envios')) {
+      response = 'Ofrecemos envío a todo México con costo fijo de $150, y envío gratis en compras mayores a $500.';
+    } else if (msgLower.includes('producto') || msgLower.includes('productos')) {
+      response = 'Tenemos larva viva, larva deshidratada y fertilizante (frass) orgánico, todo en distintas presentaciones.';
+    } else if (msgLower.includes('hola') || msgLower.includes('buenos días') || msgLower.includes('buenas tardes')) {
+      response = '¡Hola! ¿En qué puedo ayudarte hoy?';
+    } else {
+      response = 'Disculpa, no entendí eso. Puedes preguntarme por precios, envíos o productos. Si tienes más dudas, contáctanos en Whatsapp y con gusto las resolveremos: <a href="https://wa.me/+525535075566?text=Hola%2C%20me%20gustaría%20hablar%20con%20un%20asesor%20de%20Biotecnologías%20RLD" target="_blank"> Whatsapp </a> ';
+    }
+
+    // Mostrar respuesta después de un pequeño delay para simular "pensar"
+    setTimeout(() => {
+      const botMsg = document.createElement('p');
+      botMsg.innerHTML = `<strong>Proteo:</strong> ${response}`;
+      chatBody.appendChild(botMsg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }, 800);
+
+    input.value = '';
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+}
+</script>
+</body>
+<footer class="footer">
+    <div class="barra">
+        <a class="logo" href="index.html">
+            <img src="img/Logo_Final.jpg" alt="logo" style="width: 10rem; height: 10rem; margin: 1.5rem;">
+        </a>
+        <p style="color: white; font-size: 1rem; margin: 1rem;">© BIOTECNOLOGÍAS RLD | TODOS LOS DERECHOS RESERVADOS | <a href="avisolegal.html" style="color: white;" target="_blank">AVISO LEGAL</a> | <a href="avisoprivacidad.html" style="color: white;" target="_blank">AVISO DE PRIVACIDAD</a> |</p>
+        <nav class="navegacion">
+            <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+            <a href="visitas.html" class="navegacion__enlace">Visitas</a>
+            <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+        </nav>
+    </div>
+</div>
+</footer>
+</html>
