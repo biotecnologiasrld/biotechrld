@@ -210,7 +210,42 @@ img {
         margin-top: 15rem;
     }
  }
- 
+ .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /* separación entre iconos */
+  margin-bottom: 0.4rem;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Colores específicos de cada red */
+.social-links .whatsapp { color: #25D366; }
+.social-links .facebook { color: #1877F2; }
+.social-links .instagram { 
+  background: linear-gradient(45deg, #fd1d1d, #fcb045, #833ab4);
+  color: #fff;
+}
+.social-links .tiktok { color: #000; }
+
  /* MÓVILES */
  @media(max-width: 480px) {
     .header__texto {
