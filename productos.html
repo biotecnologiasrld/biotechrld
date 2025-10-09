@@ -158,14 +158,14 @@
     <div class="producto-info" style="margin-top: -1rem;">
   <label for="presentacionFrass">Presentación:</label>
   <select class="input-cantidad" style="width: auto;" id="presentacionFrass" onchange="actualizarPrecioFrass()">
-    <option value="1">1 Kg - $180</option>
-    <option value="10">10 Kg - $950</option>
+    <option value="1">1 Kg - $110</option>
+    <option value="10">10 Kg - $850</option>
   </select>
 
   <label for="cantidadFrass">Cantidad:</label>
   <input type="number" id="cantidadFrass" min="1" max="10" value="1" class="input-cantidad">
 
-  <p class="precio-producto">Precio: $<span id="precioFrass">180</span></p>
+  <p class="precio-producto">Precio: $<span id="precioFrass">110</span></p>
 
   <button onclick="agregarFrassAlCarrito('img/frassp4.jpg')" class="boton boton--agregar">Agregar al carrito</button>
 </div>
@@ -239,13 +239,13 @@
   function actualizarPrecioFrass() {
     const presentacion = document.getElementById("presentacionFrass").value;
     const precioSpan = document.getElementById("precioFrass");
-    precioSpan.textContent = presentacion === "10" ? 950 : 180;
+    precioSpan.textContent = presentacion === "10" ? 850 : 110;
   }
 
   function agregarFrassAlCarrito(imagen) {
     const presentacion = document.getElementById("presentacionFrass").value;
     const cantidad = document.getElementById("cantidadFrass").value;
-    const precio = presentacion === "10" ? 950 : 180;
+    const precio = presentacion === "10" ? 850 : 110;
     const nombre = presentacion === "10" ? "Frass 10 Kg" : "Frass 1 Kg";
 
     agregarAlCarrito(nombre, imagen, precio, cantidad);
