@@ -67,14 +67,14 @@
         </div>
       </div>
     </div>
-    <h4 style="text-align: center;">Suplemento para Aves y Reptiles: Larva Mosca Soldado Negra 500 g</h4>
+    <h4 style="text-align: center;">Alimento Premium para Aves y Reptiles: Larva Mosca Soldado Negra 500 g</h4>
     <p style="text-align: center; font-weight: bold;">¡El alimento ideal para tus animales! </p>
     <p style="text-align: justify;">Descubre nuestra larva de mosca soldado negra deshidratada, una fuente de proteína premium diseñada para satisfacer las necesidades nutricionales de tus animales. Alimento 100% natural.</p>
     <div class="producto-info">
     <label for="cantidad1">Cantidad:</label>
     <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$300</span> $<span id="precio1">270</span></p>
-    <button onclick="agregarAlCarrito('Larva deshidratada 500g', 'img/500g.jpg', 270, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
+    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$200</span> $<span id="precio1">180</span></p>
+    <button onclick="agregarAlCarrito('Larva deshidratada 500g', 'img/500g.jpg', 180, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
   </div>
 
@@ -93,7 +93,7 @@
             </div>
       </div>
     </div>
-    <h4 style="text-align: center;">Suplemento para Aves y Reptiles: Larva Mosca Soldado Negra 1 Kg</h4>
+    <h4 style="text-align: center;">Alimento Premium para Aves y Reptiles: Larva Mosca Soldado Negra 1 Kg</h4>
     <p style="text-align: center; font-weight: bold;">Beneficios comprobados: </p>
         <p style="text-align: justify; margin-bottom: -2rem;">- Mejora la digestión y absorción de nutrientes.</p>
         <p style="text-align: justify;margin-bottom: -2rem;">- Promueve un sistema inmunológico más fuerte.</p>
@@ -101,8 +101,8 @@
     <div class="producto-info">
     <label for="cantidad1">Cantidad:</label>
     <input type="number" id="cantidad1" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$450</span> $<span id="precio1">405</span></p>
-    <button onclick="agregarAlCarrito('Larva deshidratada 1 Kg', 'img/1000g.jpg', 405, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
+    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$350</span> $<span id="precio1">315</span></p>
+    <button onclick="agregarAlCarrito('Larva deshidratada 1 Kg', 'img/1000g.jpg', 315, document.getElementById('cantidad1').value)" class="boton boton--agregar">Agregar al carrito</button>
     </div>
   </div>
 <!-- Producto 3 -->
@@ -120,14 +120,14 @@
             </div>
       </div>
     </div>
-    <h4 style="text-align: center;">Alimento vivo: larva de Mosca Soldado Negra 250 pz</h4>
+    <h4 style="text-align: center;">Alimento vivo: larva de Mosca Soldado Negra 400 pz (aprox. 100 g)</h4>
     <p style="text-align: center; font-weight: bold;">Larva Viva: proteína que se mueve.</p>
         <p style="text-align: justify; margin-bottom: -2rem;">Fuente rica en proteína y grasa ideal para la alimentación de aves y reptiles. Criadas con residuos orgánicos seleccionados, nuestras larvas son una opción sustentable, fresca y altamente nutritiva. Se entregan vivas, listas para consumo o engorda.</p>
         <br>
     <div class="producto-info">
     <label for="cantidad">Cantidad:</label>
     <input type="number" min="1" max="10" value="1" class="input-cantidad">
-    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$350</span> $<span>315</span></p>
+    <p class="precio-producto">Precio: <span style="text-decoration: line-through; color: red;">$220</span> $<span>198</span></p>
     <button onclick="agregarEsteProductoAlCarrito(this)" class="boton boton--agregar">Agregar al carrito</button>
   </div>
   </div>
@@ -160,14 +160,14 @@
     <div class="producto-info" style="margin-top: -1rem;">
   <label for="presentacionFrass">Presentación:</label>
   <select class="input-cantidad" style="width: auto;" id="presentacionFrass" onchange="actualizarPrecioFrass()">
-    <option value="1">1 Kg - $110</option>
-    <option value="10">10 Kg - $850</option>
+    <option value="1">1 Kg - $95</option>
+    <option value="10">10 Kg - $800</option>
   </select>
 
   <label for="cantidadFrass">Cantidad:</label>
   <input type="number" id="cantidadFrass" min="1" max="10" value="1" class="input-cantidad">
 
-  <p class="precio-producto">Precio: $<span id="precioFrass">110</span></p>
+  <p class="precio-producto">Precio: $<span id="precioFrass">95</span></p>
 
   <button onclick="agregarFrassAlCarrito('img/frassp4.jpg')" class="boton boton--agregar">Agregar al carrito</button>
 </div>
@@ -242,13 +242,13 @@
   function actualizarPrecioFrass() {
     const presentacion = document.getElementById("presentacionFrass").value;
     const precioSpan = document.getElementById("precioFrass");
-    precioSpan.textContent = presentacion === "10" ? 850 : 110;
+    precioSpan.textContent = presentacion === "10" ? 800 : 95;
   }
 
   function agregarFrassAlCarrito(imagen) {
     const presentacion = document.getElementById("presentacionFrass").value;
     const cantidad = document.getElementById("cantidadFrass").value;
-    const precio = presentacion === "10" ? 850 : 110;
+    const precio = presentacion === "10" ? 800 : 95;
     const nombre = presentacion === "10" ? "Frass 10 Kg" : "Frass 1 Kg";
 
     agregarAlCarrito(nombre, imagen, precio, cantidad);
@@ -256,8 +256,8 @@
   function agregarEsteProductoAlCarrito(boton) {
     const producto = boton.closest('.producto-info');
     const cantidad = producto.querySelector('.input-cantidad').value;
-    const precio = '315';
-    const nombre = "Larva viva 250 u";
+    const precio = '198';
+    const nombre = "Larva viva 400 pz";
     const imagen = "img/bsf1.jpeg";
 
     agregarAlCarrito(nombre, imagen, precio, cantidad);
