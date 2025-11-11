@@ -724,13 +724,7 @@ img {
 input,
 select,
 textarea {
-  font-size: 14px;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  font-size: 16px; /* Safari no hace zoom */
+  font-size: 16px; /* Evita el zoom en iOS */
 }
 
 .modal {
